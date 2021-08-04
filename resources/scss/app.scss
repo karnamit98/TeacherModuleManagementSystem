@@ -9,13 +9,14 @@
     }
 }
 
+$primaryColor: #FAF1E6 ;
+
 @mixin displayFlexCenter() {
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-$primaryColor: #FAF1E6  ;
 
 *{
     padding:0;
@@ -30,115 +31,143 @@ body{
     background-color: $primaryColor;
 }
 
+//MAIN SECTION
 section#mainSection{
     width: 100vw;
     height:100vh;
     background-color: #ecf0f3;
-    padding: .5rem;
     @include displayFlexCenter();
 
-    h2#titleAdd{
-        color: #FF8882;
+    //DISPLAY DATA SECTION
+    section#dataSection{
+        width:70%;
+        height:100%;
+        background-color: #4A503D;
 
     }
+    //DISPLAY DATA SECTION ENDS
 
-    form{
-        @include displayFlexCenter();
-        flex-direction: column;
-        row-gap: 1rem;
-        border-radius: 5px;
+    //FORM SECTION
+    section#formSection{
         background-color: #ecf0f3;
-        padding:1.5rem 1.5rem;
-        box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+        width:30%;
+        @include displayFlexCenter();
 
-        //EACH FORM GROUPS
-        .form-group{
-            width: 100%;
-            label{
-                &:after{
-                    //content: "\a";
-                   // white-space: pre;
-                }
-            }
-    
-            // INPUT TEXT BOXES, AND DROPDOWN
-            input[type=text], input[type=email], input[type=date], select {
-                background-color: #ecf0f3;
-                border-radius: 5px;
-                border: 0;
-                height:2rem;
-                padding:.5rem;
-                width:300px;
-                box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px white;
-
-                &:focus{
-                    outline: none;
-                    box-shadow: inset 2px 2px 2px #51C4D3, inset -2px -2px 2px #51C4D3;
-                }
-            }
-
-            input[type=radio]{
-                margin-left:.3rem;
-                transition: .5s ease;
-                &:hover::after{
-                    cursor: pointer;
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 15px;
-                    top: -2px;
-                    left: -1px;
-                    position: relative;
-                    background-color: #8E9775;
-                    content: '';
-                    display: inline-block;
-                    visibility: visible;
-                    border: 2px solid white;
-                }
-
-                &:checked::after{
-                    
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 15px;
-                    top: -2px;
-                    left: -1px;
-                    position: relative;
-                    background-color: #4A503D;
-                    content: '';
-                    display: inline-block;
-                    visibility: visible;
-                    border: 2px solid white;
-                }
-            }
-
-            //SUBMIT BUTTON
-            button#btnAdd{
-                border-radius: 20px;
-                border: 0;
-                height:2rem;
-                padding:.5rem;
-                width:170px;
-                background-color: #81B214;
-                box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
-                color: #ecf0f3;
-                transition: .5s ease;
-                font-weight: bolder;
-
-                &:hover{
-                    background-color: #000;
-                    cursor: pointer;
-                    transform: translateY(-5%);
-                }
-            }
-
-        }
-
-        //FORM-GROUP CONTAINING SUBMIT BUTTON
-        #submitButton{
+        //ADD FORM
+        form{
             @include displayFlexCenter();
-            margin-top:10px;
-        }
+            width:fit-content;
+            flex-direction: column;
+            row-gap: 1rem;
+            border-radius: 5px;
+            background-color: #ecf0f3;
+            padding:1.5rem 1.5rem;
+            box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+
+            //H2 TITLE
+            h2#titleAdd{
+                color: #FF8882;
         
+            }
+
+            //EACH FORM GROUPS
+            .form-group{
+                width: 100%;
+                label{
+                    //font-weight: bolder;
+                    color: #536162;
+                }
+        
+                // INPUT TEXT BOXES, AND DROPDOWN
+                input[type=text], input[type=email], input[type=date], select {
+                    background-color: #ecf0f3;
+                    border-radius: 5px;
+                    border: 0;
+                    height:2rem;
+                    padding:.5rem;
+                    width:300px;
+                    box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px white;
+
+                    &:focus{
+                        outline: none;
+                        box-shadow: inset 2px 2px 2px #51C4D3, inset -2px -2px 2px #51C4D3;
+                    }
+                }
+
+                ////TEXT OF RADIO BUTTONS
+                .gender{
+                    color:#3C415C;
+                    font-size: .8rem;
+                }
+
+                //RADIO BUTTONS
+                input[type=radio]{
+                    margin-left:.5rem;
+                    transition: .5s ease;
+                    &:hover::after{
+                        cursor: pointer;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 15px;
+                        top: -2px;
+                        left: -1px;
+                        position: relative;
+                        background-color: #8E9775;
+                        content: '';
+                        display: inline-block;
+                        visibility: visible;
+                        border: 2px solid white;
+                    }
+
+                    &:checked::after{
+                        
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 15px;
+                        top: -2px;
+                        left: -1px;
+                        position: relative;
+                        background-color: #4A503D;
+                        content: '';
+                        display: inline-block;
+                        visibility: visible;
+                        border: 2px solid white;
+                    }
+                }
+
+                //SUBMIT BUTTON
+                button#btnAdd{
+                    border-radius: 20px;
+                    border: 0;
+                    height:2rem;
+                    padding:.5rem;
+                    width:170px;
+                    background-color: #81B214;
+                    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+                    color: #ecf0f3;
+                    transition: .3s ease;
+                    font-weight: bolder;
+
+                    &:hover{
+                        background-color: #000;
+                        cursor: pointer;
+                        transform: translateY(-5%);
+                    }
+                }
+
+            }
+
+            //FORM-GROUP CONTAINING SUBMIT BUTTON
+            #submitButton{
+                @include displayFlexCenter();
+                margin-top:10px;
+            }
+            
+        }
+        //FORM ENDS
+
     }
+    //FORM SECTION ENDS
 
 }
+//MAIN SECTION ENDS
