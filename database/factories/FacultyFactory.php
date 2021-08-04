@@ -22,7 +22,8 @@ class FacultyFactory extends Factory
     public function definition()
     {
         return [
-            'faculty_name' => $this->faker->text($maxNbChars = 15),
+            //'faculty_name' => $this->faker->text($maxNbChars = 15),
+            
         ];
     }
 }

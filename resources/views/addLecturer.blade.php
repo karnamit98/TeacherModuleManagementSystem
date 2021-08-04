@@ -100,11 +100,11 @@
 
         <!-- MODULES RELATED TO FACULTY -->
         <div class="form-group">
-            <label for="modules" >Modules: </label> <br />
-            <select name="modules" id="modules" value="{{ old('modules') }}"  class="{{ $errors->has('faculty') ? 'red-border' :'' }}" >
+            <label for="modules[]" >Modules: </label> <br />
+            <select name="modules[]" id="modules" value="{{ old('modules[]') }}"  class="{{ $errors->has('modules[]') ? 'red-border' :'' }}"  multiple required>
                 <option value="">-- select one --</option>
             </select>
-            @error('modules')
+            @error('modules[]')
                 <p class="error-text"><i class="fas fa-exclamation-circle"></i> &nbsp; &nbsp; {{ $message }}</p>
             @enderror
         </div> 

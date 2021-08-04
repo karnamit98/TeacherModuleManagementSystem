@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2021 at 02:45 PM
+-- Generation Time: Aug 04, 2021 at 07:10 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -115,7 +115,13 @@ INSERT INTO `taught_module` (`id`, `module_id`, `teacher_id`, `created_at`, `upd
 (4, 3, 2, NULL, NULL),
 (5, 4, 3, NULL, NULL),
 (6, 5, 3, NULL, NULL),
-(7, 6, 3, NULL, NULL);
+(7, 6, 3, NULL, NULL),
+(8, 1, 5, NULL, NULL),
+(9, 2, 5, NULL, NULL),
+(10, 3, 5, NULL, NULL),
+(11, 4, 6, NULL, NULL),
+(12, 5, 6, NULL, NULL),
+(13, 6, 6, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,7 +150,9 @@ CREATE TABLE `teacher` (
 INSERT INTO `teacher` (`id`, `name`, `address`, `phone`, `gender`, `email`, `nationality`, `dob`, `faculty_id`, `created_at`, `updated_at`) VALUES
 (1, 'Tony Stark', '10880 Malibu Point, USA', '888-989-9990', 'male', 'ironman3000@gmail.com', 'American', '1970-05-29', 1, NULL, NULL),
 (2, 'Bruce Banner', 'Dayton, Ohio, USA', '989-776-9982', 'male', 'hulksmash@gmail.com', 'American', '1969-12-18', 1, NULL, NULL),
-(3, 'Terence Chi-Shen Tao', 'Los Angeles, USA', '765-123-8765', 'male', 'terrencetao@gmail.com', 'Australian', '1975-07-17', 2, NULL, NULL);
+(3, 'Terence Chi-Shen Tao', 'Los Angeles, USA', '765-123-8765', 'male', 'terrencetao@gmail.com', 'Australian', '1975-07-17', 2, NULL, NULL),
+(5, 'Clark Kent', 'Manhattan, USA', '999-222-1111', 'male', 'superman999@gmail.com', 'american', '1938-04-29', 1, '2021-08-04 11:21:55', '2021-08-04 11:21:55'),
+(6, 'Bruce Wayne', 'Gotham, USA', '999-999-9999', 'male', 'imbatman@gmail.com', 'american', '1978-04-17', 2, '2021-08-04 11:25:26', '2021-08-04 11:25:26');
 
 --
 -- Indexes for dumped tables
@@ -213,13 +221,13 @@ ALTER TABLE `module`
 -- AUTO_INCREMENT for table `taught_module`
 --
 ALTER TABLE `taught_module`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

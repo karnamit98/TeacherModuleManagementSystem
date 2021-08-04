@@ -33,9 +33,13 @@ class TaughtModuleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($teacher_id, $module_id)
     {
-        //
+        $taughtModule = new TaughtModule;
+        $taughtModule->teacher_id = $teacher_id;
+        $taughtModule->module_id = $module_id;
+        //var_dump("tid:".$teacher_id.", mid:".$module_id);
+        $taughtModule->save();
     }
 
     /**

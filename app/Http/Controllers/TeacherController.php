@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Teacher;
 use App\Models\Faculty;
 use App\Models\Module;
+use App\Http\Controllers\TaughtModuleController;
 
 class TeacherController extends Controller
 {
@@ -65,12 +66,41 @@ class TeacherController extends Controller
             'phone' => 'required',
             'dob' => 'required|date',
             'faculty' => 'required',
-            'modules' => 'required',
+            //'modules' => 'required',
         ]);
 
-        dd('validation success!!');
+        //dd($request);
 
-        return 'validation success!';
+        //Add Teacher to the DB table
+        $teacher = new Teacher;
+        $teacher->name = $request->name;
+        $teacher->nationality = $request->nationality;
+        $teacher->gender = $request->gender;
+        $teacher->email = $request->email;
+        $teacher->address = $request->address;
+        $teacher->phone = $request->phone;
+        $teacher->dob = $request->dob;
+        $teacher->faculty_id = $request->faculty;
+
+        //dd($request->modules);
+        if($teacher->save()){
+            $teacherId = (Teacher::latest()->first())->id;        //Get the latest inserted record's id
+
+            $taughtModuleController = new TaughtModuleController;
+            //Add associated modules
+            foreach($request->modules as $module)
+            {
+                //var_dump("module:".$module);
+                $taughtModuleController->store($teacherId, $module);
+            }
+        } 
+        
+        
+        //$teacherId = $teacher->id();
+
+        
+
+        return redirect()->route('home');
     }
 
     /**

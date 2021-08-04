@@ -14,7 +14,15 @@ class TaughtModule extends Model
      */
     public $table = "taught_module";
 
-    
+    /**
+     * Disables timestamps
+     */
+    public $timestamps = false;
+
+     /**
+     * Fillable properties of taughtModule.
+     */
+    protected $fillable = ['teacher_id', 'module_id' ];
 
     /**
      * Returns the teacher.
