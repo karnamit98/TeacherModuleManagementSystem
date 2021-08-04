@@ -14,6 +14,8 @@ class TaughtModule extends Model
      */
     public $table = "taught_module";
 
+    
+
     /**
      * Returns the teacher.
      */

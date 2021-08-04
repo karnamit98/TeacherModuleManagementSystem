@@ -14,27 +14,102 @@ body {
   background-color: #FAF1E6;
 }
 
-section#mainSection {
+nav {
+  position: absolute;
+  top: 45%;
+  left: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+nav ul li {
+  text-align: center;
+  background-color: #252525;
+  color: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  list-style-type: none;
+  transition: 0.3s ease;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+nav ul li:hover {
+  cursor: pointer;
+  background-color: #000;
+  box-shadow: 2px 2px 5px #011a33;
+  transform: translateY(-3px);
+}
+
+section#mainSection section#showDataSection, section#mainSection section#addFormSection {
   width: 100vw;
   height: 100vh;
-  background-color: #ecf0f3;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-section#mainSection section#dataSection {
-  width: 70%;
-  height: 100%;
-  background-color: #4A503D;
-}
-section#mainSection section#formSection {
-  background-color: #ecf0f3;
-  width: 30%;
+section#mainSection section#showDataSection {
+  background-color: #9DAD7F;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
-section#mainSection section#formSection form {
+section#mainSection section#showDataSection .container {
+  width: 50%;
+  background-color: #F3F4ED;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 30px 40px -20px #1B1717;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+section#mainSection section#showDataSection .container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 30px 40px -20px #363030;
+}
+section#mainSection section#showDataSection .container h2#titleAdd {
+  color: #FF8882;
+}
+section#mainSection section#showDataSection .container .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+section#mainSection section#showDataSection .container .item .item1 {
+  color: #424642;
+}
+section#mainSection section#showDataSection .container .item .item2 {
+  font-weight: bolder;
+}
+section#mainSection section#showDataSection .container .item .item2 .modules {
+  padding: 0.3rem 0.7rem;
+  border-radius: 19px;
+  color: #fff;
+  background-color: #679B9B;
+}
+section#mainSection section#showDataSection #pagination .w-5 {
+  display: none;
+}
+section#mainSection section#addFormSection {
+  background-color: #ecf0f3;
+}
+section#mainSection section#addFormSection form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,16 +123,16 @@ section#mainSection section#formSection form {
   padding: 1.5rem 1.5rem;
   box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
 }
-section#mainSection section#formSection form h2#titleAdd {
+section#mainSection section#addFormSection form h2#titleAdd {
   color: #FF8882;
 }
-section#mainSection section#formSection form .form-group {
+section#mainSection section#addFormSection form .form-group {
   width: 100%;
 }
-section#mainSection section#formSection form .form-group label {
+section#mainSection section#addFormSection form .form-group label {
   color: #536162;
 }
-section#mainSection section#formSection form .form-group input[type=text], section#mainSection section#formSection form .form-group input[type=email], section#mainSection section#formSection form .form-group input[type=date], section#mainSection section#formSection form .form-group select {
+section#mainSection section#addFormSection form .form-group input[type=text], section#mainSection section#addFormSection form .form-group input[type=email], section#mainSection section#addFormSection form .form-group input[type=date], section#mainSection section#addFormSection form .form-group select {
   background-color: #ecf0f3;
   border-radius: 5px;
   border: 0;
@@ -66,19 +141,19 @@ section#mainSection section#formSection form .form-group input[type=text], secti
   width: 300px;
   box-shadow: inset 5px 5px 5px #cbced1, inset -5px -5px 5px white;
 }
-section#mainSection section#formSection form .form-group input[type=text]:focus, section#mainSection section#formSection form .form-group input[type=email]:focus, section#mainSection section#formSection form .form-group input[type=date]:focus, section#mainSection section#formSection form .form-group select:focus {
+section#mainSection section#addFormSection form .form-group input[type=text]:focus, section#mainSection section#addFormSection form .form-group input[type=email]:focus, section#mainSection section#addFormSection form .form-group input[type=date]:focus, section#mainSection section#addFormSection form .form-group select:focus {
   outline: none;
   box-shadow: inset 2px 2px 2px #51C4D3, inset -2px -2px 2px #51C4D3;
 }
-section#mainSection section#formSection form .form-group .gender {
+section#mainSection section#addFormSection form .form-group .gender {
   color: #3C415C;
   font-size: 0.8rem;
 }
-section#mainSection section#formSection form .form-group input[type=radio] {
+section#mainSection section#addFormSection form .form-group input[type=radio] {
   margin-left: 0.5rem;
   transition: 0.5s ease;
 }
-section#mainSection section#formSection form .form-group input[type=radio]:hover::after {
+section#mainSection section#addFormSection form .form-group input[type=radio]:hover::after {
   cursor: pointer;
   width: 12px;
   height: 12px;
@@ -92,7 +167,7 @@ section#mainSection section#formSection form .form-group input[type=radio]:hover
   visibility: visible;
   border: 2px solid white;
 }
-section#mainSection section#formSection form .form-group input[type=radio]:checked::after {
+section#mainSection section#addFormSection form .form-group input[type=radio]:checked::after {
   width: 12px;
   height: 12px;
   border-radius: 15px;
@@ -105,7 +180,7 @@ section#mainSection section#formSection form .form-group input[type=radio]:check
   visibility: visible;
   border: 2px solid white;
 }
-section#mainSection section#formSection form .form-group button#btnAdd {
+section#mainSection section#addFormSection form .form-group button#btnAdd {
   border-radius: 20px;
   border: 0;
   height: 2rem;
@@ -117,14 +192,67 @@ section#mainSection section#formSection form .form-group button#btnAdd {
   transition: 0.3s ease;
   font-weight: bolder;
 }
-section#mainSection section#formSection form .form-group button#btnAdd:hover {
+section#mainSection section#addFormSection form .form-group button#btnAdd:hover {
   background-color: #000;
   cursor: pointer;
   transform: translateY(-5%);
 }
-section#mainSection section#formSection form #submitButton {
+section#mainSection section#addFormSection form #submitButton {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+}
+
+ul.pager {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+ul.pager li {
+  list-style-type: none;
+  margin: 0 0.6rem;
+}
+ul.pager li a {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+ul.pager li a:hover {
+  background-color: #000;
+  border-radius: 50%;
+}
+ul.pager li.disabled {
+  background-color: #797A7E;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+}
+ul.pager li.active {
+  background-color: #61B15A;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.5rem 1rem;
+}
+ul.pager #btnPrev, ul.pager #btnNext {
+  background-color: #98ACF8;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+  transition: 0.2s ease;
+}
+ul.pager #btnPrev:hover, ul.pager #btnNext:hover {
+  background-color: #000;
+}
+ul.pager #btnPrev:hover {
+  transform: translateX(-10px);
+}
+ul.pager #btnNext:hover {
+  transform: translateX(10px);
 }

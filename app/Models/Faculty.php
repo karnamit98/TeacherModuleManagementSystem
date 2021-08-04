@@ -15,6 +15,11 @@ class Faculty extends Model
     public $table = "faculty";
 
     /**
+     * Fillable properties of faculty
+     */
+    protected $fillable = ['faculty_name'];
+
+    /**
      * Returns teachers in the faculty.
      */
     public function teachers(){
@@ -25,7 +30,7 @@ class Faculty extends Model
      * Returns modules in the faculty.
      */
     public function modules(){
-        return $this->hasMany(Module::class); 
+        return $this->hasMany(modules::class); 
     }
 
     

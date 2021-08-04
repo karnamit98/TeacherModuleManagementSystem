@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TeacherController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +19,8 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::view('/', 'index');
+//Route::view('/', 'showData');
+Route::view('/add', 'addForm');
+
+Route::get('/', [TeacherController::class, 'index'])->name('home');
+Route::get('/addLecturer', [TeacherController::class, 'create'])->name('addLecturer');

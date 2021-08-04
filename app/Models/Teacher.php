@@ -15,6 +15,18 @@ class Teacher extends Model
     public $table = "teacher";
 
     /**
+     * Fillable properties of teacher.
+     */
+    protected $fillable = ['name', 
+                            'gender', 
+                            'dob', 
+                            'nationality', 
+                            'address', 
+                            'phone', 
+                            'faculty', 
+                            'email'];
+
+    /**
      * Returns the faculty that the teacher belongs to.
      */
     public function faculty()
@@ -29,5 +41,7 @@ class Teacher extends Model
     {
         return $this->hasMany(TaughtModule::class);
     }
+
+    
 
 }

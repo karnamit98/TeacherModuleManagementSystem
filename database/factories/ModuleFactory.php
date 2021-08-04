@@ -15,6 +15,11 @@ class ModuleFactory extends Factory
     protected $model = module::class;
 
     /**
+     * Fillable properties of module
+     */
+    protected $fillable = ['module_name'];
+
+    /**
      * Define the model's default state.
      *
      * @return array
