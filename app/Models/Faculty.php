@@ -30,7 +30,7 @@ class Faculty extends Model
      * Returns modules in the faculty.
      */
     public function modules(){
-        return $this->hasMany(modules::class); 
+        return $this->hasMany(Module::class); 
     }
 
     

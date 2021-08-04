@@ -203,6 +203,15 @@ section#mainSection section#addFormSection form #submitButton {
   justify-content: center;
   margin-top: 10px;
 }
+section#mainSection section#addFormSection form .error-text {
+  padding: 0.2rem 0.5rem;
+  padding-bottom: 0;
+  color: #EA5455;
+  font-size: 0.7rem;
+}
+section#mainSection section#addFormSection form .red-border {
+  border: 1px solid #EA5455 !important;
+}
 
 ul.pager {
   width: 100%;

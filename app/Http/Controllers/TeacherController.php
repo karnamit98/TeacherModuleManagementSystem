@@ -30,7 +30,21 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('addLecturer');
+        $faculties = Faculty::with('modules')->get();
+        //dd($faculties);
+        return view('addLecturer', ['faculties' => $faculties]);
+    }
+
+
+   
+
+    /**
+     * Modules belonging to a faculty
+     */
+    public function associatedFacultyModules($id)
+    {
+        $module = Module::where('faculty_id',$id)->get();
+        return response()->json($module);
     }
 
     /**
@@ -43,15 +57,19 @@ class TeacherController extends Controller
     {
         //Validations
         $validated = $request->validate([
-            'name' => 'required|unique:posts|max:255',
-            'nationality' => 'required|email,email',
+            'name' => 'required|max:255',
+            'nationality' => 'required',
             'gender' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'address' => 'required',
             'phone' => 'required',
             'dob' => 'required|date',
+            'faculty' => 'required',
+            'modules' => 'required',
         ]);
-        
+
+        dd('validation success!!');
+
         return 'validation success!';
     }
 

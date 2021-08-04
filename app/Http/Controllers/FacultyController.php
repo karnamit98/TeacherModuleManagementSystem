@@ -14,10 +14,9 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $faculties = Faculty::all();
+        //
     }
 
-    
 
     /**
      * Show the form for creating a new resource.

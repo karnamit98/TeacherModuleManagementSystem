@@ -249,6 +249,19 @@ section#mainSection{
                 @include displayFlexCenter();
                 margin-top:10px;
             }
+
+            //ERROR TEXT
+            .error-text{
+                padding:.2rem .5rem;
+                padding-bottom: 0;
+                color:#EA5455;
+                font-size: .7rem;
+            }
+
+            //ERROR FIELDS BORDER
+            .red-border{
+                border:1px solid #EA5455 !important;
+            }
             
         }
         //FORM ENDS
@@ -314,3 +327,4 @@ ul.pager{
     #btnPrev{   &:hover{ transform: translateX(-10px) ; } }
     #btnNext{  &:hover{ transform: translateX(10px); } }
 }
+
